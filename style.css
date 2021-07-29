@@ -1,6 +1,164 @@
 #interface {
     margin: auto;
     margin-top: 100px;
+    width: 800px;
+    height: 500px;
     display: block;
-    border: 2px solid black;
+    border: 10px solid rgb(240, 13, 13);
+    background-color: rgb(0, 0, 0);
+}
+
+/*Configurações do status Bar*/
+#statusBar {
+    width: 800px;
+    height: 100px;
+}
+
+#nomePersonagem {
+    display: inline-block;
+    width: 170px;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+#hp {
+    display: inline-block;
+    width: 100px; /*Será alterado via JS toda vez que tomar dano (corresponde à quantidade atual de vida)*/
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 30px;
+}
+
+#quantidadeHp {
+    display: inline;
+    margin-left: 5%;
+    color: rgb(255, 6, 6);
+    text-align: center;
+    font-size:large;
+}
+
+ #dano {
+    display: inline-block;
+    width: 100px;;
+    height: 30px;
+    background-color: red;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+#quantidadeDano {
+    display: inline;
+    margin-left: 5%;
+    color: rgb(255, 245, 245);
+    text-align: center;
+    font-size: large;
+}
+/*Alterar display para block quando não houver inimigo, e para inline-block ou inline quando tiver inimigo*/
+#nomeInimigo {
+    display: inline-block;
+    width: 170px;
+    height: 30px;
+    margin-left: 350px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+#hpInimigo {
+    display: inline-block;
+    width: 100px; /*Será alterado via JS toda vez que tomar dano (corresponde à quantidade atual de vida)*/
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 400px;
+}
+
+#quantidadeHpInimigo {
+    display: inline;
+    margin-left: 5%;
+    color: rgb(255, 6, 6);
+    text-align: center;
+    font-size:large;
+}
+
+#danoInimigo {
+    display: inline-block;
+    width: 100px;;
+    height: 30px;
+    background-color: red;
+    margin-top: 10px;
+    margin-left: 400px;
+}
+
+#quantidadeDanoInimigo {
+    display: inline;
+    margin-left: 5%;
+    color: rgb(255, 245, 245);
+    text-align: center;
+    font-size: large;
+}
+
+/*Configurações do action Bar*/
+#actionBar {
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+    width: 600px;
+    height: 100px;
+}
+
+#ocultarActionBar {
+    display: block; /*Alterar para aparecer os botões de ação*/
+}
+
+#botaoSim {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: 20px 0 0 120px;
+    font-size: x-large;
+    border-radius: 40%;
+}
+
+#botaoNao {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: 20px 0 0 20px;
+    font-size: x-large;
+    border-radius: 40%;
+}
+
+/*Dando zoom no botão, quando o jogador passar o mouse encima*/
+#botaoSim:hover {
+    color: green;
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+     transform: scale(1.2);
+}
+
+#botaoNao:hover {
+    color: red;
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+     transform: scale(1.2);
+}
+
+/*Configurações do Console*/
+#console {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 600px;
+    height: 150px;
+    color: rgb(255, 255, 255);
+    border: 2px solid white;
+}
+
+#console p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: large;
 }
