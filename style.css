@@ -110,7 +110,7 @@
 }
 
 #ocultarActionBar {
-    display: block; /*Alterar para aparecer os botões de ação*/
+    display: none; /*Alterar para aparecer os botões de ação*/
 }
 
 #botaoSim {
