@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" type="text/css" href="style.css" />
         <title> O Aventureiro </title>
-        <script type="javascript" src="roteiro.js"></script>
+        <script type="text/javascript" src="roteiro.js"></script>
     </head>
     <body>
         <div id="interface">
@@ -15,36 +15,36 @@
                 </div>
 
                 <div id="nomeInimigo">
-                    <h3 id="inimigoNome">Inimigo</h3>
+                    <h3 id="inimigoNome"></h3>
                 </div>
                 
                 <br><div id="hp">
-                    <p id="quantidadeHp">HP:</p>
+                    <p id="quantidadeHp"></p>
                 </div>
                 
                 <div id="hpInimigo">
-                    <p id="quantidadeHpInimigo">HP:</p>
+                    <p id="quantidadeHpInimigo">:</p>
                 </div>
 
                 <br><div id="dano">
-                    <p id="quantidadeDano">Dano:</p>
+                    <p id="quantidadeDano"></p>
                 </div>
 
                 <div id="danoInimigo">
-                    <p id="quantidadeDanoInimigo">Dano:</p>
+                    <p id="quantidadeDanoInimigo"></p>
                 </div>
 
             </div>
             <div id="actionBar">
                 <div id="ocultarActionBar">
-                    <input type="button" name="botaoSim" id="botaoSim" value="SIM">
-                    <input type="button" name="botaoNao" id="botaoNao" value="NÃO">
+                    <input type="button" name="botaoSim" id="botaoSim" value="SIM" onclick="cliqueSim()">
+                    <input type="button" name="botaoNao" id="botaoNao" value="NÃO" onclick="cliqueNao()">
                 </div>
             </div>
             <div id="console">
                 <p id="textoConsoleL1">Bem vindo ao jogo "O Aventureiro".</p>
-                <p id="textoConsoleL2">Este jogo é baseado no sistema de "escolhas", onde você deve decidir as decisões a serem tomadas.</p>
-                <p id="textoConsoleL3"><input type="button" name="continuar" id="continuar" value="Deseja Continuar?"></p>
+                <p id="textoConsoleL2">Este jogo é baseado no sistema de "escolhas", onde você deve decidir as ações a serem tomadas.</p>
+                <p id="textoConsoleL3"><input type="button" name="continuar" id="continuar" value="Deseja Continuar?" onclick="iniciar()"></p>
             </div>
         </div>
     </body>

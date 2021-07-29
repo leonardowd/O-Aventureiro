@@ -56,9 +56,8 @@
     text-align: center;
     font-size: large;
 }
-/*Alterar display para block quando não houver inimigo, e para inline-block ou inline quando tiver inimigo*/
 #nomeInimigo {
-    display: inline-block;
+    display: none; /*mudar para inline-block quando aparecer inimigo*/
     width: 170px;
     height: 30px;
     margin-left: 350px;
@@ -68,7 +67,7 @@
 }
 
 #hpInimigo {
-    display: inline-block;
+    display: none; /*mudar para inline-block quando aparecer inimigo*/
     width: 100px; /*Será alterado via JS toda vez que tomar dano (corresponde à quantidade atual de vida)*/
     height: 30px;
     background-color: rgb(255, 255, 255);
@@ -76,7 +75,7 @@
 }
 
 #quantidadeHpInimigo {
-    display: inline;
+    display: none; /*mudar para inline quando aparecer inimigo*/
     margin-left: 5%;
     color: rgb(255, 6, 6);
     text-align: center;
@@ -84,7 +83,7 @@
 }
 
 #danoInimigo {
-    display: inline-block;
+    display: none; /*mudar para inline-block quando aparecer inimigo*/
     width: 100px;;
     height: 30px;
     background-color: red;
@@ -93,7 +92,7 @@
 }
 
 #quantidadeDanoInimigo {
-    display: inline;
+    display: none; /*mudar para inline quando aparecer inimigo*/
     margin-left: 5%;
     color: rgb(255, 245, 245);
     text-align: center;
