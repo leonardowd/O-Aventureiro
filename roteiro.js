@@ -10,6 +10,7 @@ function iniciar() {
         //setando atributos iniciais do personagem//
         hp = 100;
         dano = 10;
+        alteracaoStatus();
 
         function alteracaoStatus() {
             abaHp.innerHTML = `Vida: ${hp}`;
@@ -49,8 +50,12 @@ function iniciar() {
                 texto2.innerHTML = `Sua vida aumentou em + 10 :D`;
                 hp = hp + 10;
                 alteracaoStatus();
+
+                texto3.style.display = 'block';
+                texto3.innerHTML = `Deseja Continuar?`;
+
              } else {
-                 alert("fon");
+               //  alert("fon");
              }
         
              evento.preventDefault(); //evita que a página atualize
