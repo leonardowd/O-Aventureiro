@@ -10,8 +10,11 @@ function iniciar() {
         //setando atributos iniciais do personagem//
         hp = 100;
         dano = 10;
-        abaHp.innerHTML = `Vida: ${hp}`;
-        abaDano.innerHTML = `Dano: ${dano}`;
+
+        function alteracaoStatus() {
+            abaHp.innerHTML = `Vida: ${hp}`;
+            abaDano.innerHTML = `Dano: ${dano}`;
+        }
     //Inimigos:
         let abaNomeInimigo = document.getElementById('nomeInimigo');
         let abaHpInimigo = document.getElementById('quantidadeHpInimigo');
@@ -32,19 +35,27 @@ function iniciar() {
 
         actionBar.style.display = 'block';
 
-        form.addEventListener('submit', function(e) {
+        let btn = document.getElementById('confirmar');
+        
+        btn.addEventListener('click', function(evento) { //criando verificação de click no botão do formulário
             let form = document.getElementById('formulario');
             let resposta = document.getElementById('resposta').value;
+            resposta = resposta.toUpperCase();
+            
+            //verificando resposta do usuário e seguindo o jogo
+            if(resposta == "S") {
+               
+                texto1.innerHTML = `Você decidiu comer a maçã, ela estava saborosa!!!.`;
+                texto2.innerHTML = `Sua vida aumentou em + 10 :D`;
+                hp = hp + 10;
+                alteracaoStatus();
+             } else {
+                 alert("fon");
+             }
+        
+             evento.preventDefault(); //evita que a página atualize
+        });
 
-            e.preventDefault();
-        })
-
-        if(resposta == "SIM") {
-            texto1.innerHTML = `Você decidiu comer a maçã, ela estava saborosa!!!.`;
-            texto2.innerHTML = `Sua vida aumentou em + 10 :D`;
-            hp = hp + 10;
-    }
     /*debug*/
-    console.log(resposta);
-    //alert(resposta.value);
+    //console.log(resposta);
 }
