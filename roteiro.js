@@ -53,7 +53,7 @@ function iniciar() {
                  alert("fon");
              }
         
-             evento.preventDefault(); //evita que a página atualize
+           //  evento.preventDefault(); //evita que a página atualize
         });
 
     /*debug*/
