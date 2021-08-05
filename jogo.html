@@ -37,8 +37,10 @@
             </div>
             <div id="actionBar">
                 <div id="ocultarActionBar">
-                    <input type="button" name="botaoSim" id="botaoSim" value="SIM" onclick="cliqueSim()">
-                    <input type="button" name="botaoNao" id="botaoNao" value="NÃO" onclick="cliqueNao()">
+                    <form id="formulario">
+                        <input type="text" name="resposta" id="resposta" placeholder="SIM/NAO">
+                        <input type="submit" id="confirmar" value="Confirmar">
+                    </form>
                 </div>
             </div>
             <div id="console">

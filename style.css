@@ -112,37 +112,8 @@
     display: none; /*Alterar para aparecer os botões de ação*/
 }
 
-#botaoSim {
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-    margin: 20px 0 0 120px;
-    font-size: x-large;
-    border-radius: 40%;
-}
+#pergunta {
 
-#botaoNao {
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-    margin: 20px 0 0 20px;
-    font-size: x-large;
-    border-radius: 40%;
-}
-
-/*Dando zoom no botão, quando o jogador passar o mouse encima*/
-#botaoSim:hover {
-    color: green;
-    -moz-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-     transform: scale(1.2);
-}
-
-#botaoNao:hover {
-    color: red;
-    -moz-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-     transform: scale(1.2);
 }
 
 /*Configurações do Console*/
