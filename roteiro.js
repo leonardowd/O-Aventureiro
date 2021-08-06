@@ -67,6 +67,10 @@ function atualizarCena(isPositivo) {
   else if (step === 7) {
     passo7();
   }
+  //SIM // NAO
+  else if (step === 8) {
+    passo8(isPositivo);
+  }
 
   // ...etc
   verificarMorte();
@@ -219,7 +223,7 @@ function passo6(isPositivo) {
     updateHUD();
   } else {
     updateMessage(
-      "Você preferiu não montar barraca...Amanheceu e você se sente muito cansado, a mente esgotada..."
+      "Você preferiu não montar barraca...Amanheceu e você se sente muito cansado, a mente esgotada..." +
       "<br><br>" +
       "Você perdeu 30 de vida e 5 de dano"
       );
