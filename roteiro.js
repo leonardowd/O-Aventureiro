@@ -1,6 +1,17 @@
+//personagem
 var step = 0;
 var vida = 100;
 var dano = 10;
+
+//inimigos
+var nomeInimigo = "teste";
+var vidaInimigo = 10;
+var danoInimigo = 10;
+
+  //setando informações dos inimigos
+  var lobo = "lobo";
+  var vidaLobo = 30;
+  var danoLobo = 5;
 
 iniciar();
 
@@ -10,31 +21,31 @@ function iniciar() {
   //Iniciando a história do game:
   updateMessage(
     "Você é um guerreiro chamado Dragonborn, que decidiu se aventurar pelo mundo para se tornar o maior de todos os guerreiros." +
-      "<br>" +
-      "Durante o caminho, você avistou uma árvore de maçã, deseja comer uma maçã?"
+      "<br><br>" +
+      "Clique em 'OK' para continuar..."
   );
 }
 
 function atualizarCena(isPositivo) {
-  // sim / nao
+  // OK
   if (step === 0) {
-    passo0(isPositivo);
+    passo0();
   }
-  // OK
+  // SIM // NAO
   else if (step === 1) {
-    passo1();
-  }
-  // sim / nao
-  else if (step === 2) {
-    passo2(isPositivo);
+    passo1(isPositivo);
   }
   // OK
-  else if (step === 3) {
-    passo3();
+  else if (step === 2) {
+    passo2();
   }
-  // sim / nao
+  // 
+  else if (step === 3) {
+    passo3(isPositivo);
+  }
+  // 
   else if (step === 4) {
-    passo4(isPositivo);
+    passo4();
   }
 
   // ...etc
@@ -67,47 +78,63 @@ function alternarBotoesAcao(deveMostrarSimNao) {
     // ou vice versa
 }
 
+function duelo() {
+  while (vida >= 1) {
+    
+  } 
+}
+
+function setarInimigo(nome, vida, dano) {
+  this.nomeInimigo = nome;
+  this.vidaInimigo = vida;
+  this.danoInimigo = dano;
+};
+
 // ============================ PASSOS ========================================
 
-function passo0(isPositivo) {
+function passo0() {
+  updateMessage(
+    "Enquanto caminhava, você encontrou uma árvore de maçã..." +
+    "<br><br>" +
+    " Sua barriga ronca de fome, deseja comer uma maçã?"
+    );
+}
+
+function passo1(isPositivo) {
   if (isPositivo) {
     updateMessage(
-      "Você comeu a maça :3 " + " <br> " + "Sua vida aumentou em 10 pontos!"
-    );
-    vida += 10;
+      "Você comeu a maçã, sua vida aumentou em 20!!" + 
+      "<br><br>" +
+      "Clique 'OK' para continuar"
+      );
+    vida = vida + 20;
     updateHUD();
   } else {
     updateMessage(
-      "Você não comeu a maça >:( " +
-        "<br> " +
-        "A fome diminuiu sua vida em 10 pontos!"
-    );
-    vida -= 10;
+      "Você não comeu a maça, sua fome aumentou, fazendo você perder 20 de vida." + 
+      "<br><br>" +
+      "Clique 'OK' para continuar"
+      );
+    vida = vida - 20;
     updateHUD();
   }
 }
 
-function passo1() {
-  updateMessage("Você encontrou um pepino dourado. <br> Gostaria de equipa-lo?");
+function passo2() {
+  updateMessage(
+    "Após caminhar mais um pouco, você avista um lobo à frente..." +
+    "<br><br>" +
+    "Deseja passar pelo caminho do lobo?"
+    );
 }
 
-function passo2(isPositivo) {
+function passo3(isPositivo) {
   if (isPositivo) {
-    updateMessage("Você equipou o pepino e se sente mais forte!");
-    dano += 69;
-    updateHUD();
-  } else {
-    updateMessage("Você não equipou o pepino. Isso é inaceitavel.");
-    vida = 0;
-    updateHUD();
+    setarInimigo(lobo, vidaLobo, danoLobo);
+    alert(vidaInimigo);
+    updateMessage(
+      "Enquanto você se aproximava do lobo, ele te detectou e veio na sua direção"
+      );
+    
   }
-}
-
-function passo3() {
-  updateMessage("Você encontrou um troll, deseja lutar?");
-  updateHUD();
-}
-
-function passo4(isPositivo) {
-  // TODO dê o resultado da reação ao troll
 }
