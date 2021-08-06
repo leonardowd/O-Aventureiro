@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>O Aventureiro</title>
+  </head>
+  <body>
+    <div id="interface">
+      <div id="hero-hud">
+        <div id="nomeInimigo">
+          <h3 id="inimigoNome"></h3>
+        </div>
+        <div id="hp">
+          <p id="quantidadeHp"></p>
+        </div>
+        <br />
+        <div id="dano">
+          <p id="quantidadeDano"></p>
+        </div>
+      </div>
+
+      <div id="enemy-hud">
+        <div id="hpInimigo">
+          <p id="quantidadeHpInimigo">:</p>
+        </div>
+        <div id="danoInimigo">
+          <p id="quantidadeDanoInimigo"></p>
+        </div>
+      </div>
+
+      <div id="area-mensagem">
+        <a id="mensagem"></a>
+      </div>
+
+      <div id="opcoes-decisao">
+        <button type="button" id="resposta-nao" onclick="atualizarCena(false)">
+          Não
+        </button>
+
+        <button type="button" id="resposta-sim" onclick="atualizarCena(true)">
+          Sim
+        </button>
+      </div>
+
+      <div id="prox-passo-btn">
+        <button type="button" id="resposta-ok" onclick="atualizarCena(true)">
+          OK
+        </button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="roteiro.js"></script>
+  </body>
+</html>
