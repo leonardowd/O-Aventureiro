@@ -10,14 +10,26 @@ var danoRecebido = 0;
 var espadaFerro = 30;
 
 //inimigos
-var nomeInimigo = "teste";
-var vidaInimigo = 10;
-var danoInimigo = 10;
+var nomeInimigo;
+var vidaInimigo;
+var danoInimigo;
 
   //setando informações dos inimigos
   var lobo = "lobo";
   var vidaLobo = 30;
-  var danoLobo = 5;
+  var danoLobo = 15;
+
+  var loboRaivoso = "Lobo Raivoso";
+  var vidaLoboRaivoso = 100;
+  var danoLoboRaivoso = 50;
+
+  var urso = "Urso";
+  var vidaUrso = 200;
+  var danoUrso = 100;
+
+  var demonio = "Demonio";
+  var vidaDemonio = 5000;
+  var danoDemonio = 5000;
 
 iniciar();
 
@@ -71,6 +83,38 @@ function atualizarCena(isPositivo) {
   else if (step === 8) {
     passo8(isPositivo);
   }
+  //OK
+  else if (step === 9) {
+    passo9();
+  }
+  // SIM // NAO
+  else if (step === 10) {
+    passo10(isPositivo);
+  }
+  //OK
+  else if (step === 11) {
+    passo11();
+  }
+  //SIM // NAO
+  else if (step === 12) {
+    passo12(isPositivo);
+  }
+  //OK
+  else if (step === 13) {
+    passo13();
+  }
+  //OK
+  else if (step === 14) {
+    passo14(isPositivo);
+  }
+  //OK
+  else if (step === 15) {
+    passo15();
+  }
+  //SIM // NAO
+  else if (step === 16) {
+    passo16(isPositivo);
+  }
 
   // ...etc
   verificarMorte();
@@ -103,8 +147,14 @@ function verificarMorte() {
     "<br><br>" +
     "O " + nomeInimigo + " te atacou e você sofreu um total de " + danoRecebido + " de dano" +
     "<br><br>" +
-    "Você morreu"
+    "<h1 id='morreu'>Você morreu parça!!</h1>" +
+    "Obrigado por jogar!! Visite o meu GitHub no ícone abaixo da tela do jogo." +
+    "<br><br>" +
+    "Agradecimentos a Arthur Freitas (GitHub abaixo da tela do jogo)" +
+    "<br><br>" +
+    "Aperte F5 para reiniciar o jogo"
     );
+    alternarBotoesAcao();
   }
 }
 
@@ -121,9 +171,9 @@ function verificarMorteInimigo() {
   }
 }
 
-function alternarBotoesAcao(deveMostrarSimNao) {
-    // TODO mostrar os botoes de sim/nao e esconder o de ok
-    // ou vice versa
+function alternarBotoesAcao() {
+    document.getElementById('opcoes-decisao').style.display = 'none';
+    document.getElementById('prox-passo-btn').style.display = 'none';
 }
 
 function duelo() {
@@ -136,6 +186,7 @@ function duelo() {
   }
 
   verificarMorteInimigo();
+  updateHUD();
 }
 
 function setarInimigo(nome, vida, dano) {
@@ -260,5 +311,106 @@ function passo8(isPositivo) {
     "Você preferiu se manter em segurança e deixar pra lá..." +
     "<br><br>" +
     "Clique em 'OK' para continuar..."
+  }
+}
+
+function passo9() {
+  updateMessage(
+    "Você já consegue avistar o final do deserto, mas sente sede...de repente, avista um poço de água, será que é real?..." +
+    "<br><br>" +
+    "Você foi até o poço, ele é real, porém sua cor está um pouco estranha..." +
+    "<br><br>" +
+    "Você deseja beber da água?"
+    );
+}
+function passo10(isPositivo) {
+  if (isPositivo) {
+    updateMessage(
+      "Você decidiu beber a água, você sente um gosto estranho, e desmaia..." +
+      "<br><br>" +
+      "A água estava envenenada, porém não chegou a te matar..." +
+      "<br><br>" +
+      "Você perdeu 30 de vida" +
+      "<br><br>" +
+      "Clique em 'OK' para continuar..."   
+     );
+    vida = vida - 30;
+    updateHUD();
+  } else {
+    updateMessage(
+      "Você decidiu não beber a água, e por causa da sua sede, você perdeu 5 de vida" +
+      "<br><br>" +
+      "Clique em 'OK' para continuar..."
+      );
+    vida = vida - 5;
+    updateHUD();
+  }
+    
+}
+
+function passo11() {
+  updateMessage(
+    "Você conseguiu sair do deserto e entrou em um ambiente com algumas árvores, porém seco..." +
+    "<br><br>" +
+    "Você avistou um atalho, deseja pegar o atalho?"
+    );
+}
+
+function passo12(isPositivo) {
+  if (isPositivo) {
+    updateMessage(
+      "Você decidiu pegar o atalho, e está caminhando..." +
+      "<br><br>" +
+      "Quando de repente aparece em sua frente um " + demonio + "!!!" +
+      "<br><br>" +
+      "Clique em 'OK' para continuar..."
+      );
+  } else {
+    updateMessage(
+      "Você decidiu não pegar o atalho, então seguiu em frente..." +
+      "<br><br>" +
+      "Depois de caminhar um pouco, você deu de cara com um " + loboRaivoso + "!!" +
+      "<br><br>" +
+      "Clique em 'OK' para continuar..."
+      );
+    step++
+  }
+}
+
+function passo13() {
+  setarInimigo(demonio, danoDemonio, vidaDemonio);
+  duelo();
+}
+
+function passo14() {
+  setarInimigo(loboRaivoso, danoLoboRaivoso, vidaLoboRaivoso);
+  duelo();
+}
+
+function passo15() {
+  updateMessage(
+    "Está anoitecendo, você gostaria de armar uma barraca?"
+    );
+}
+
+function passo16(isPositivo) {
+  if (isPositivo) {
+    updateMessage(
+      "Você decidiu armar barraca, comeu um bom ensopado, e dormiu bem. Você se sente descansado" +
+      "<br><br>" +
+      "Dano aumentou em 10 e vida aumentou em 50"
+      );
+    dano = dano + 10;
+    vida = vida + 50;
+    updateHUD();
+  } else {
+    updateMessage(
+      "Você preferiu não montar barraca...Amanheceu e você se sente muito cansado, a mente esgotada..." +
+      "<br><br>" +
+      "Você perdeu 30 de vida e 5 de dano"
+      );
+    dano = dano - 5;
+    vida = vida - 30;
+    updateHUD();
   }
 }
