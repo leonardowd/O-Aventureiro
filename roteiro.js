@@ -127,7 +127,7 @@ function updateHUD() {
   document.getElementById("quantidadeDano").innerHTML = `Dano: ${dano}`;
 
   //inimigo
-  document.getElementById('inimigoNome').innerHTML
+  document.getElementById('jogadorNome').innerHTML
 }
 
 function updateMessage(msg) {
