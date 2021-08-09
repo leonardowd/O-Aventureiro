@@ -147,10 +147,7 @@ function verificarMorte() {
     "<br><br>" +
     "O " + nomeInimigo + " te atacou e você sofreu um total de " + danoRecebido + " de dano" +
     "<br><br>" +
-    "<h1 id='morreu'>Você morreu parça!!</h1>" +
-    "Obrigado por jogar!! Visite o meu GitHub no ícone abaixo da tela do jogo." +
-    "<br><br>" +
-    "Agradecimentos a Arthur Freitas (GitHub abaixo da tela do jogo)" +
+    "<span id='morreu'>Você morreu parça!!</span>" +
     "<br><br>" +
     "Aperte F5 para reiniciar o jogo"
     );
