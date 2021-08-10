@@ -136,3 +136,24 @@
   text-align: center;
   margin-top: 40%;
 }
+
+/*Rodapé */
+#rodape {
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#nomeRodape {
+  font-family: cursive;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.icones {
+  display: inline-block;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+}
