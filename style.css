@@ -78,6 +78,7 @@
 }
 
 #opcoes-decisao {
+  display: none;
   width: 200px;
   height: 50px;
   margin: auto;
@@ -127,4 +128,11 @@
 #resposta-ok:hover {
   color: blue;
   border: 2px solid grey;
+}
+
+#textoFinal {
+  color: red;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 40%;
 }

@@ -8,6 +8,8 @@ var danoRecebido = 0;
 
 //Armas
 var espadaFerro = 30;
+var espadaElfica = 50;
+var armaduraElfica = 200;
 
 //inimigos
 var nomeInimigo;
@@ -50,6 +52,7 @@ function atualizarCena(isPositivo) {
   // OK
   if (step === 0) {
     passo0();
+    
   }
   // SIM // NAO
   else if (step === 1) {
@@ -115,6 +118,46 @@ function atualizarCena(isPositivo) {
   else if (step === 16) {
     passo16(isPositivo);
   }
+  //OK
+  else if (step === 17) {
+    passo17();
+  }
+  //OK
+  else if (step === 18) {
+    passo18();
+  }
+  //SIM // NAO
+  else if (step === 19) {
+    passo19(isPositivo);
+  }
+  //OK
+  else if (step === 20) {
+    passo20();
+  }
+  //SIM // NAO
+  else if (step === 21) {
+    passo21(isPositivo);
+  }
+  //OK
+  else if (step === 22) {
+    passo22();
+  }
+  //OK
+  else if (step === 23) {
+    passo23();
+  }
+  //OK
+  else if (step === 24) {
+    passo24();
+  }
+  //OK
+  else if (step === 25) {
+    passo25();
+  }
+  //OK
+  else if (step === 26) {
+    passo26();
+  }
 
   // ...etc
   verificarMorte();
@@ -151,7 +194,7 @@ function verificarMorte() {
     "<br><br>" +
     "Aperte F5 para reiniciar o jogo"
     );
-    alternarBotoesAcao();
+    esconderBotoesMorte();
   }
 }
 
@@ -168,9 +211,19 @@ function verificarMorteInimigo() {
   }
 }
 
-function alternarBotoesAcao() {
+function esconderBotoesMorte() { //esconder os botões quando o jogador morrer.
     document.getElementById('opcoes-decisao').style.display = 'none';
     document.getElementById('prox-passo-btn').style.display = 'none';
+}
+
+function alternarBotoesAcao(mostrarSimNao) {
+  if (mostrarSimNao) {
+    document.getElementById('opcoes-decisao').style.display = 'block';
+    document.getElementById('prox-passo-btn').style.display = 'none';
+  } else {
+    document.getElementById('opcoes-decisao').style.display = 'none';
+    document.getElementById('prox-passo-btn').style.display = 'block';
+  }
 }
 
 function duelo() {
@@ -195,6 +248,7 @@ function setarInimigo(nome, vida, dano) {
 // ============================ PASSOS ========================================
 
 function passo0() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Enquanto caminhava, você encontrou uma árvore de maçã..." +
     "<br><br>" +
@@ -203,6 +257,7 @@ function passo0() {
 }
 
 function passo1(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Você comeu a maçã, sua vida aumentou em 20!!" + 
@@ -223,6 +278,7 @@ function passo1(isPositivo) {
 }
 
 function passo2() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Após caminhar mais um pouco, você avista um lobo à frente..." +
     "<br><br>" +
@@ -231,6 +287,7 @@ function passo2() {
 }
 
 function passo3(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Enquanto você se aproximava do lobo, ele te detectou e veio na sua direção" +
@@ -248,18 +305,21 @@ function passo3(isPositivo) {
 }
 
 function passo4() {
+  alternarBotoesAcao();
   setarInimigo(lobo, vidaLobo, danoLobo);
   duelo();
 
 }
 
 function passo5() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Está anoitecendo, você gostaria de armar uma barraca?"
     );
 }
 
 function passo6(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Você decidiu armar barraca, comeu um bom ensopado, e dormiu bem. Você se sente descansado" +
@@ -282,6 +342,7 @@ function passo6(isPositivo) {
 }
 
 function passo7() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Uma semana se passou de caminhada... Você está no meio do deserto e avista uma tempestade de areia..." +
     "<br><br>" +
@@ -294,6 +355,7 @@ function passo7() {
 }
 
 function passo8(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Você decidiu ir verificar...Está chegando perto...Parece que é um bixo poderoso..." +
@@ -312,6 +374,7 @@ function passo8(isPositivo) {
 }
 
 function passo9() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Você já consegue avistar o final do deserto, mas sente sede...de repente, avista um poço de água, será que é real?..." +
     "<br><br>" +
@@ -321,6 +384,7 @@ function passo9() {
     );
 }
 function passo10(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Você decidiu beber a água, você sente um gosto estranho, e desmaia..." +
@@ -346,6 +410,7 @@ function passo10(isPositivo) {
 }
 
 function passo11() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Você conseguiu sair do deserto e entrou em um ambiente com algumas árvores, porém seco..." +
     "<br><br>" +
@@ -354,6 +419,7 @@ function passo11() {
 }
 
 function passo12(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Você decidiu pegar o atalho, e está caminhando..." +
@@ -375,22 +441,26 @@ function passo12(isPositivo) {
 }
 
 function passo13() {
+  alternarBotoesAcao();
   setarInimigo(demonio, danoDemonio, vidaDemonio);
   duelo();
 }
 
 function passo14() {
+  alternarBotoesAcao();
   setarInimigo(loboRaivoso, danoLoboRaivoso, vidaLoboRaivoso);
   duelo();
 }
 
 function passo15() {
+  alternarBotoesAcao(true);
   updateMessage(
     "Está anoitecendo, você gostaria de armar uma barraca?"
     );
 }
 
 function passo16(isPositivo) {
+  alternarBotoesAcao();
   if (isPositivo) {
     updateMessage(
       "Você decidiu armar barraca, comeu um bom ensopado, e dormiu bem. Você se sente descansado" +
@@ -410,4 +480,111 @@ function passo16(isPositivo) {
     vida = vida - 30;
     updateHUD();
   }
+}
+
+function passo17() {
+  alternarBotoesAcao();
+  updateMessage(
+    "Você se levantou e avistou uma cidade...Será a cidade de Perkas?" +
+    "<br><br>" +
+    "Você se levanta e decide ir em direção à cidade..." +
+    "<br><br>" +
+    "Clique 'OK' para continuar..."
+  );
+}
+
+function passo18() {
+  alternarBotoesAcao(true);
+  updateMessage(
+    "Você está quase lá, mas de repente, você encontra a ponta do que parece ser um baúl enterrado..." +
+    "<br><br>" +
+    "Mas ele está bem protegido por um " + lobo + "..." +
+    "<br><br>" +
+    "Você deseja lutar contra o " + lobo + " para pegar o baú?"
+  );
+}
+
+function passo19(isPositivo) {
+  alternarBotoesAcao();
+  if (isPositivo) {
+    updateMessage(
+      "Você decidiu lutar contra o " + lobo + "!!" +
+      "<br><br>" +
+      "Clique 'OK' para continuar..."
+    );
+  } else {
+    updateMessage(
+      "Você decidiu seguir em frente e ignorar o " + lobo + "!" +
+      "<br><br>" +
+      "Clique 'OK' para continuar"
+    );
+    step++;
+    step++; //pulando dois passos, porque o passo 20 é o duelo, e o passo 21 é a recompensa caso ganhe o duelo.
+  }
+}
+
+function passo20() {
+  alternarBotoesAcao();
+  setarInimigo(lobo, vidaLobo, danoLobo);
+  duelo();
+}
+
+function passo21(isPositivo) {
+  alternarBotoesAcao();
+  updateMessage(
+    "Você abriu o baúl, nossa, que brilho!!" +
+    "<br><br>" +
+    "Você encontrou uma Armadura Élfica e uma Espada Élfica!!" +
+    "<br><br>" +
+    "Seu dano aumentou em " + espadaElfica + " e sua vida em " + armaduraElfica + "!!"
+  );
+  vida = vida + armaduraElfica;
+  dano = dano + espadaElfica;
+  updateHUD();
+}
+
+function passo22() {
+  alternarBotoesAcao();
+  updateMessage(
+    "Você já consegue ver os portões da cidade de Perkas, então você acelera o passo, quando de repente..." +
+    "<br><br>" +
+    "Um " + urso + " aparece à sua frente e vem correndo em sua direção..." +
+    "<br><br>" +
+    "Clique em 'OK' para continuar..."
+  );
+}
+
+function passo23() {
+  alternarBotoesAcao();
+  setarInimigo(urso, vidaUrso, danoUrso);
+  duelo();
+}
+
+function passo24() {
+  alternarBotoesAcao();
+    updateMessage(
+      "Você derrotou o " + nomeInimigo + "!!" +
+      "<br><br>" +
+      "Após derrotar o inimigo, você seguiu adiante, e finalmente chegou à cidade de Perkas!!"
+    );
+}
+
+function passo25() {
+  alternarBotoesAcao();
+  updateMessage(
+    "Chegamos ao final de 'O Aventureiro', parabéns por zerar o jogo!!" +
+    "<br><br>" +
+    "Muito obrigado por ter nos honrado com a tua participação testando o jogo :D" +
+    "<br><br>" +
+    "Agradecimento especial à Arthur Freitas, linkedin abaixo da tela de jogo."
+  );
+}
+
+function passo26() {
+  esconderBotoesMorte();
+  updateMessage(
+    "<span id='textoFinal'>FIM DO JOGO</span>" +
+    "<br><br>" +
+    "Jogo desenvolvido por Leonardo Vinicius, mais informações abaixo da tela do jogo :D"
+  );
 }
