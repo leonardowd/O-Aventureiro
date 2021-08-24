@@ -17,7 +17,7 @@ O jogo foi desenvolvido utilizando apenas *JavaScript*, *HTML*, e *CSS*, não ut
 
 ### Agradecimentos:
 
-Agradeço a *Arthur Freitas* [Linkedin dele:](https://www.linkedin.com/in/arthur-freitas-698373165/), por ter me orientado durante todo o processo de desenvolvimento do jogo.
+Agradeço a **[Arthur Freitas](https://www.linkedin.com/in/arthur-freitas-698373165/)**, por ter me orientado durante todo o processo de desenvolvimento do jogo.
 
 
 **[Meu Linkedin:](https://www.linkedin.com/in/leonardoviniciuswd/)**
