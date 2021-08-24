@@ -10,4 +10,4 @@
 
 ### Interface do jogo:
 
-![](caminho até a imagem)
+![](imagem-demo.png)
