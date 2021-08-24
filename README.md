@@ -6,7 +6,7 @@
 
 ### Clique aqui para jogar:
 
-[O Aventureiro](https://leonardowd.github.io/O-Aventureiro/)
+#### [O Aventureiro](https://leonardowd.github.io/O-Aventureiro/)
 
 ### Interface do jogo:
 
